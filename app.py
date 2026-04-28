@@ -8,13 +8,13 @@ from utils.logger import get_logger
 logger = get_logger()
 
 st.set_page_config(
-    page_title="Career Advisor GenAI",
+    page_title="Edith AI Consultation",
     page_icon="🎓",
     layout="centered"
 )
 
-st.title("🎓 Career Advisor Chatbot")
-st.caption("Production-Ready GenAI Career Guidance System")
+st.title("🎓 Edith AI Consultation")
+st.caption("Firm level consultation at your firgertips")
 
 if "memory" not in st.session_state:
     st.session_state.memory = ConversationMemory()

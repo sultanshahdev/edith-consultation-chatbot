@@ -223,7 +223,7 @@ RESPONSE FORMAT:
 3. Learning Path
 4. Potential Risks
 5. Next Actions
-```
+``` 
 
 The `build_prompt()` method combines this system instruction with:
 - The conversation context string (from `ConversationMemory`)
