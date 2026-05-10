@@ -47,7 +47,7 @@ The chatbot is designed to help users explore various topics, assess their needs
 
 ## 🚀 Live App
 
-🔗 [https://edith-consultation.streamlit.app](https://edith-consultation.streamlit.app)
+🔗 [https://consult-edith.streamlit.app](https://consult-edith.streamlit.app)
 
 ---
 
