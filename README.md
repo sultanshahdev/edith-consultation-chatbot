@@ -1,8 +1,8 @@
-# 🎓 Career Advisor Chatbot (GenAI)
+# 🎓 Consultation Chatbot (GenAI)
 
-> A production-ready, domain-specific AI career guidance chatbot powered by the **Google Gemini GenAI API**, built with a modular backend architecture and deployed on **Streamlit Community Cloud**.
+> A production-ready, domain-specific AI consultation chatbot powered by the **Google Gemini GenAI API**, built with a modular backend architecture and deployed on **Streamlit Community Cloud**.
 
-[![Live App](https://img.shields.io/badge/Live%20App-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://career-advisor-chatbot.streamlit.app)
+[![Live App](https://img.shields.io/badge/Live%20App-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://consultation-chatbot.streamlit.app)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Gemini API](https://img.shields.io/badge/Gemini-3.1--flash--lite-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -30,7 +30,7 @@
 
 ## 🧠 Project Overview
 
-The **Career Advisor Chatbot** is a production-grade AI application that provides structured, actionable career guidance to users. It leverages Google's **Gemini 3.1 Flash Lite** model for fast, intelligent responses and is built following real-world AI engineering principles.
+The **Consultation Chatbot** is a production-grade AI application that provides structured, actionable consultation services to users. It leverages Google's **Gemini 3.1 Flash Lite** model for fast, intelligent responses and is built following real-world AI engineering principles.
 
 The project goes beyond a basic chatbot prototype by implementing:
 
@@ -41,27 +41,27 @@ The project goes beyond a basic chatbot prototype by implementing:
 - **Centralized logging and custom exception handling**
 - **Cloud deployment** on Streamlit Community Cloud
 
-The chatbot is designed to help users explore career paths, assess skill gaps, understand learning roadmaps, and evaluate career transitions — all through a natural, conversational interface.
+The chatbot is designed to help users explore various topics, assess their needs, understand solutions, and evaluate options — all through a natural, conversational interface.
 
 ---
 
 ## 🚀 Live App
 
-🔗 [https://career-advisor-chatbot.streamlit.app](https://career-advisor-chatbot.streamlit.app)
+🔗 [https://edith-consultation.streamlit.app](https://edith-consultation.streamlit.app)
 
 ---
 
 ## ✨ Features
 
-### 🤖 AI-Powered Career Guidance
-Integrated with the **Google Gemini 2.5 Flash Lite** model to generate fast, high-quality, domain-specific career advice. The model is accessed via the `google-genai` Python SDK.
+### 🤖 AI-Powered Consultation
+Integrated with the **Google Gemini 2.5 Flash Lite** model to generate fast, high-quality, domain-specific consultation responses. The model is accessed via the `google-genai` Python SDK.
 
 ### 📋 Structured Response Format
 Every response from the chatbot follows a consistent, prompt-enforced structure:
-1. **Career Insight** — context about the career or role
-2. **Recommended Skills** — technical and soft skills required
-3. **Learning Path** — step-by-step roadmap or resource guidance
-4. **Potential Risks** — honest evaluation of challenges or downsides
+1. **Insight** — context and understanding
+2. **Key Recommendations** — actionable recommendations
+3. **Implementation Path** — step-by-step roadmap or resource guidance
+4. **Potential Challenges** — honest evaluation of challenges or considerations
 5. **Next Actions** — immediate, actionable steps the user can take
 
 ### 🧩 Multi-Turn Conversation Memory
@@ -143,7 +143,7 @@ The application follows a **unidirectional, layered pipeline architecture**:
 ## 📁 Project Structure
 
 ```
-Career_Advisor_Chatbot_GenAI/
+Consultation_Chatbot_GenAI/
 │
 ├── app.py                    # Main Streamlit application entry point
 ├── requirements.txt          # Python dependencies
@@ -207,21 +207,21 @@ Constructs the final prompt sent to the Gemini model by combining a structured s
 
 **System Prompt Design:**
 ```
-You are a professional Career Advisor AI.
+You are a professional Consultation AI.
 
 RULES:
-- Provide structured, realistic career guidance.
+- Provide structured, realistic consultation guidance.
 - Avoid generic motivation or vague advice.
-- Base suggestions on skills, market demand, and learning paths.
+- Base suggestions on available information and best practices.
 - If information is missing, ask clarifying questions.
-- Never fabricate job guarantees or salaries.
+- Never fabricate guarantees or unrealistic promises.
 - Always provide actionable next steps.
 
 RESPONSE FORMAT:
-1. Career Insight
-2. Recommended Skills
-3. Learning Path
-4. Potential Risks
+1. Insight
+2. Key Recommendations
+3. Implementation Path
+4. Potential Challenges
 5. Next Actions
 ``` 
 
@@ -269,7 +269,7 @@ Configures a Python `logging` instance used throughout the application.
 ```
 
 - Log level is set to `INFO`, capturing standard application events and errors
-- The logger is named `"CareerAdvisorGenAI"` for easy filtering in log outputs
+- The logger is named `"ConsultationChatbotGenAI"` for easy filtering in log outputs
 - Used primarily in `gemini_client.py` to log API errors
 
 ---
@@ -292,7 +292,7 @@ class GeminiAPIException(Exception):
 Centralizes application-level constants to avoid magic numbers scattered across the codebase.
 
 ```python
-APP_NAME = "Career Advisor GenAI"
+APP_NAME = "Consultation Chatbot GenAI"
 MAX_MEMORY_TURNS = 5
 ```
 
@@ -311,8 +311,8 @@ Contains custom CSS injected into the Streamlit interface to enhance the visual 
 The prompt follows a **role + rules + format + context + query** pattern, which is one of the most reliable structures for instruction-following language models.
 
 | Prompt Section        | Purpose                                                                 |
-|-----------------------|-------------------------------------------------------------------------|
-| **Role Definition**   | Establishes the model's persona as a "professional Career Advisor AI"   |
+|-----------------------|---------|
+| **Role Definition**   | Establishes the model's persona as a "professional Consultation AI"   |
 | **Rules**             | Constrains model behavior — prevents hallucination, vague advice, etc.  |
 | **Response Format**   | Enforces a structured 5-section output for every response               |
 | **Conversation Context** | Provides the sliding window of past turns for continuity             |
@@ -368,8 +368,8 @@ This approach:
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/Avik-Das-567/Career_Advisor_Chatbot_GenAI.git
-cd Career_Advisor_Chatbot_GenAI
+git clone https://github.com/Avik-Das-567/Consultation_Chatbot_GenAI.git
+cd Consultation_Chatbot_GenAI
 ```
 
 ### Step 2 — Create and Activate a Virtual Environment
@@ -448,22 +448,22 @@ This project is deployed on **Streamlit Community Cloud** — a free, managed ho
    ```
 5. Click **"Deploy"** — the app will be live within a few minutes
 
-**Live URL:** [https://career-advisor-chatbot.streamlit.app](https://career-advisor-chatbot.streamlit.app)
+**Live URL:** [https://consultation-chatbot.streamlit.app](https://consultation-chatbot.streamlit.app)
 
 ---
 
 ## 💬 Example Queries
 
-The chatbot is designed to handle a wide range of career-related queries. Here are some examples:
+The chatbot is designed to handle a wide range of consultation queries. Here are some examples:
 
 | Query | What to Expect |
 |-------|----------------|
-| *"What skills do I need to become a data scientist?"* | Skills breakdown, learning path, tools to learn |
-| *"How can I transition from mechanical engineering to software development?"* | Transferable skills, gaps to fill, recommended roadmap |
-| *"Is cybersecurity a good career in 2026?"* | Market demand analysis, risks, entry points |
-| *"What roadmap should I follow to become an ML engineer?"* | Step-by-step learning path from fundamentals to deployment |
-| *"What are the risks of switching careers into AI?"* | Honest evaluation of challenges, timelines, and expectations |
-| *"I know Python basics. What should I learn next for data science?"* | Personalised next steps based on current skill level |
+| *"What should I do about...?"* | Structured analysis and recommendations |
+| *"How can I approach this problem?"* | Step-by-step guidance and alternative solutions |
+| *"What are the pros and cons of...?"* | Balanced evaluation of options |
+| *"What's the best way to...?"* | Best practices and recommendations |
+| *"What should I consider before...?"* | Key factors and decision-making framework |
+| *"I'm considering... what advice do you have?"* | Personalized guidance based on specific situation |
 
 ---
 
@@ -509,19 +509,20 @@ All logs follow this format for easy parsing:
 
 ## 🔮 Future Improvements
 
-- **RAG Integration** — connect the chatbot to a vector database (e.g., Pinecone, ChromaDB) populated with career resources, job market data, and skill taxonomies for grounded, factual responses
+- **RAG Integration** — connect the chatbot to a vector database (e.g., Pinecone, ChromaDB) populated with consultation resources and knowledge bases for grounded, factual responses
 - **Persistent Memory** — replace session-based memory with a database-backed store (e.g., SQLite, Redis) to persist conversations across sessions
 - **User Authentication** — add login functionality to save user-specific conversation history
 - **Streaming Responses** — use the Gemini streaming API with `st.write_stream()` for a more dynamic typing effect
 - **Feedback Loop** — add thumbs up/down buttons on responses to collect user feedback for future prompt tuning
-- **Export Conversation** — allow users to download their career advice session as a PDF or text file
+- **Export Conversation** — allow users to download their consultation session as a PDF or text file
 - **Multi-language Support** — expand the system prompt to handle queries in multiple languages
 
 ---
 
 ## 👤 Author
 
-[Avik Das](https://github.com/Avik-Das-567)
+**Sultan Shah** - 
+[github](https:www.github.com/sultanshahdev)
 
 ---
 
